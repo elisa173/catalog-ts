@@ -13,3 +13,12 @@ export function average(...values: number[]): number {
     const total = sum(...values);
     return total / values.length;
 }
+
+export function label(x:number):string;
+export function label(x:string):string;
+export function label(x:any):string {
+    if (typeof x === "number") {
+        return "Ref #" + x;
+    }
+    return x.toUpperCase();
+}    
